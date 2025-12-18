@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-[#1a2332] pt-0 pb-10 px-[10%] text-[#e8eef3] flex flex-col items-center gap-8">
-      <div className="w-full pt-8 border-t border-white/5 flex flex-col items-center gap-6">
+      <div className="w-full pt-4 border-t border-white/5 flex flex-col items-center gap-6">
         <h3 className="text-2xl font-light text-[#d4a574] uppercase tracking-widest">Let's Collaborate</h3>
 
         <div className="flex justify-center gap-6 flex-wrap">

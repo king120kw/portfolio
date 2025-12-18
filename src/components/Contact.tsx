@@ -54,7 +54,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div id="contact" className="relative z-10 pt-0 pb-8 px-6 md:px-[10%] min-h-[auto] flex flex-col justify-center">
+    <div id="contact" className="relative z-10 pt-0 pb-4 px-6 md:px-[10%] min-h-[auto] flex flex-col justify-center">
       <div className="max-w-4xl mx-auto w-full">
         {/* Contact Form (Centered Glassmorphism) */}
         <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-2xl autoShow transition-all duration-500">

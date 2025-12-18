@@ -34,7 +34,7 @@ export const Portfolio: React.FC = () => {
       image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop",
       title: "Construction Site Management",
       description: "Led complex on-site operations for major infrastructure developments, ensuring strict adherence to safety protocols (OSHA) and engineering standards. Orchestrated timeline management, resource allocation, and cross-functional team coordination to deliver projects under budget and ahead of schedule.",
-      videoUrl: "", // User to provide video
+      videoUrl: "/video_2025-12-18_22-28-20.mp4",
       details: [
         "Managed daily site operations and safety compliance for 50+ personnel.",
         "Optimized resource allocation reducing material waste by 15%.",

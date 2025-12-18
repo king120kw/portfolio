@@ -55,7 +55,7 @@ export const Navbar = () => {
         ))}
       </nav>
 
-      {/* Mobile Nav Toggle */}
+      {/* Mobile Nav Toggle (Hamburger) - Keeping as fallback/main menu */}
       <div className="md:hidden fixed top-5 right-5 z-50">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -66,7 +66,23 @@ export const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Nav Menu */}
+      {/* Mobile Quick Nav Bar (Horizontal Scroll) - Specific User Request */}
+      <div className={`md:hidden fixed top-0 left-0 right-0 z-40 bg-dark/95 backdrop-blur-md border-b border-white/10 transition-transform duration-300 ${isScrolled ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className="flex overflow-x-auto py-4 px-4 gap-4 no-scrollbar scroll-smooth">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-wider text-light border border-white/20 bg-white/5 active:bg-[#d4a574] active:text-[#1a2332] active:border-[#d4a574] transition-colors"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile Nav Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 bg-dark/95 z-40 flex flex-col items-center justify-center space-y-8 md:hidden">
           {navLinks.map((link) => (

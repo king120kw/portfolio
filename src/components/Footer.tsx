@@ -1,4 +1,5 @@
 import React from 'react';
+import { Twitter, Linkedin, Instagram, MessageCircle } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -25,7 +26,7 @@ export const Footer: React.FC = () => {
             { text: 'Services', id: 'services' },
             { text: 'My Work', id: 'portfolio' },
             { text: 'Get Started', id: 'getStarted' },
-            { text: 'Contact', id: 'contact' }
+            // Removed Contact link as requested
           ].map((item, index) => (
             <a
               key={index}
@@ -36,6 +37,22 @@ export const Footer: React.FC = () => {
             </a>
           ))}
         </nav>
+
+        <div className="flex justify-center gap-6 my-5">
+          <a href="#" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#1DA1F2]" aria-label="Twitter">
+            <Twitter className="w-5 h-5" />
+          </a>
+          <a href="#" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#0077B5]" aria-label="LinkedIn">
+            <Linkedin className="w-5 h-5" />
+          </a>
+          <a href="https://wa.me/254740895374" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#25D366]" aria-label="WhatsApp">
+            <MessageCircle className="w-5 h-5" />
+          </a>
+          <a href="#" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#E4405F]" aria-label="Instagram">
+            <Instagram className="w-5 h-5" />
+          </a>
+        </div>
+
         <p className="text-[11px] opacity-50 mt-2.5">
           © 2024 Ismail Abdirahman. All rights reserved.
         </p>

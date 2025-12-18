@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { supabase } from '../lib/supabaseClient';
+import { Loader2, Send } from 'lucide-react';
 
 export const GetStarted: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -6,10 +8,51 @@ export const GetStarted: React.FC = () => {
     email: '',
     subject: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form will be handled by Formspree
+    setIsSubmitting(true);
+    setStatus('idle');
+
+    try {
+      // 1. Save to Database (Supabase)
+      const { error: dbError } = await supabase
+        .from('contacts')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: `Project Type: ${formData.subject}` // Using subject as message since form has no message field
+          }
+        ]);
+
+      if (dbError) throw dbError;
+
+      // 2. Send Email Alert (Netlify Function -> Resend)
+      try {
+        await fetch('/.netlify/functions/send-contact-email', {
+          method: 'POST',
+          body: JSON.stringify({
+            ...formData,
+            message: `Project Type: ${formData.subject}`
+          }),
+        });
+      } catch (emailError) {
+        console.warn('Email trigger failed:', emailError);
+      }
+
+      setStatus('success');
+      setFormData({ name: '', email: '', subject: '' });
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,8 +89,6 @@ export const GetStarted: React.FC = () => {
       </h2>
 
       <form
-        action="https://formspree.io/ismailabdirahman1767@gmail.com"
-        method="POST"
         onSubmit={handleSubmit}
         className="max-w-[600px] mx-auto mt-10"
       >
@@ -63,6 +104,7 @@ export const GetStarted: React.FC = () => {
             value={formData.name}
             onChange={handleChange}
             required
+            autoComplete="name"
             className="w-full p-3 border-none rounded-md bg-[rgba(255,255,255,0.1)] text-white text-sm transition-all duration-300 focus:bg-[rgba(255,255,255,0.2)] focus:outline-none"
           />
         </div>
@@ -72,12 +114,13 @@ export const GetStarted: React.FC = () => {
           </label>
           <input
             type="email"
-            name="_replyto"
+            name="email"
             id="email"
             placeholder="your.email@example.com"
             value={formData.email}
             onChange={handleChange}
             required
+            autoComplete="email"
             className="w-full p-3 border-none rounded-md bg-[rgba(255,255,255,0.1)] text-white text-sm transition-all duration-300 focus:bg-[rgba(255,255,255,0.2)] focus:outline-none"
           />
         </div>
@@ -93,15 +136,37 @@ export const GetStarted: React.FC = () => {
             value={formData.subject}
             onChange={handleChange}
             required
+            autoComplete="off"
             className="w-full p-3 border-none rounded-md bg-[rgba(255,255,255,0.1)] text-white text-sm transition-all duration-300 focus:bg-[rgba(255,255,255,0.2)] focus:outline-none"
           />
         </div>
         <button
           type="submit"
-          className="py-3 px-10 bg-[#d4a574] text-[#1a2332] border-none rounded-md font-['Roboto_Condensed'] text-base font-normal uppercase tracking-wider cursor-pointer transition-all duration-300 mt-5 hover:bg-[#c49563] hover:-translate-y-0.5 hover:shadow-[0_5px_15px_rgba(212,165,116,0.3)]"
+          disabled={isSubmitting}
+          className="w-full py-3 px-10 bg-[#d4a574] text-[#1a2332] border-none rounded-md font-['Roboto_Condensed'] text-base font-normal uppercase tracking-wider cursor-pointer transition-all duration-300 mt-5 hover:bg-[#c49563] hover:-translate-y-0.5 hover:shadow-[0_5px_15px_rgba(212,165,116,0.3)] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Start Collaboration
+          {isSubmitting ? (
+            <>
+              <Loader2 className="w-5 h-5 animate-spin" />
+              Sending...
+            </>
+          ) : (
+            <>
+              Start Collaboration
+            </>
+          )}
         </button>
+
+        {status === 'success' && (
+          <div className="mt-4 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-200 text-center animate-fade-in">
+            Message sent successfully! I'll get back to you soon.
+          </div>
+        )}
+        {status === 'error' && (
+          <div className="mt-4 p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-200 text-center animate-fade-in">
+            Failed to send message. Please try again later.
+          </div>
+        )}
       </form>
     </div>
   );

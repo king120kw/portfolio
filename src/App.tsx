@@ -5,7 +5,6 @@ import { About } from './components/About';
 import { Services } from './components/Services';
 import { Portfolio } from './components/Portfolio';
 import { GetStarted } from './components/GetStarted';
-import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 
@@ -22,7 +21,6 @@ function App() {
         <Services />
         <Portfolio />
         <GetStarted />
-        <Contact />
         <Footer />
         <ScrollToTop />
       </div>

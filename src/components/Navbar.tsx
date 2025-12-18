@@ -55,31 +55,15 @@ export const Navbar = () => {
         ))}
       </nav>
 
-      {/* Mobile Nav Toggle (Hamburger) - Keeping as fallback/main menu */}
-      <div className="md:hidden fixed top-5 right-5 z-50">
+      {/* Mobile Nav Toggle (Hamburger) */}
+      <div className="md:hidden fixed top-6 right-6 z-[100]">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="text-[#1a2332] p-3 bg-[#d4a574] rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+          className="flex items-center justify-center w-12 h-12 bg-[#d4a574] text-[#1a2332] rounded-full shadow-[0_0_20px_rgba(212,165,116,0.5)] active:scale-95 transition-all duration-300"
           aria-label="Toggle Menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </div>
-
-      {/* Mobile Quick Nav Bar (Horizontal Scroll) - Specific User Request */}
-      <div className="md:hidden fixed top-[80px] left-0 right-0 z-40 bg-dark/95 backdrop-blur-md border-y border-white/10 shadow-lg">
-        <div className="flex overflow-x-auto py-3 px-4 gap-4 no-scrollbar scroll-smooth items-center">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-wider text-light border border-white/20 bg-white/5 active:bg-[#d4a574] active:text-[#1a2332] active:border-[#d4a574] transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
-        </div>
       </div>
 
       {/* Mobile Nav Menu Overlay */}

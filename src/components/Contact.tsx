@@ -127,6 +127,8 @@ export const Contact: React.FC = () => {
                 <input
                   type="text"
                   required
+                  readOnly={false}
+                  autoComplete="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full bg-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] transition-colors"
@@ -138,6 +140,8 @@ export const Contact: React.FC = () => {
                 <input
                   type="email"
                   required
+                  readOnly={false}
+                  autoComplete="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full bg-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] transition-colors"
@@ -151,6 +155,8 @@ export const Contact: React.FC = () => {
               <input
                 type="text"
                 required
+                readOnly={false}
+                autoComplete="off"
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                 className="w-full bg-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] transition-colors"
@@ -162,6 +168,7 @@ export const Contact: React.FC = () => {
               <label className="text-xs uppercase tracking-widest text-[#d4a574] font-semibold">Message</label>
               <textarea
                 required
+                readOnly={false}
                 rows={4}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}

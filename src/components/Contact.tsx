@@ -11,6 +11,12 @@ export const Contact: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [isFocused, setIsFocused] = useState(false);
+
+  // Clear focus when clicking outside (on the main container)
+  const handleContainerClick = () => {
+    setIsFocused(true);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,11 +60,19 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div id="contact" className="relative z-10 pt-0 pb-12 px-6 md:px-[10%] min-h-[auto] flex flex-col justify-center">
+    <div
+      id="contact"
+      onClick={handleContainerClick}
+      className="relative z-10 pt-0 pb-12 px-6 md:px-[10%] min-h-[auto] flex flex-col justify-center cursor-default"
+    >
       <div className="max-w-4xl mx-auto w-full">
         {/* Contact Form (Centered Glassmorphism) */}
-        <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-2xl autoShow transition-all duration-500">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className={`bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-2xl autoShow transition-all duration-500 ${isFocused ? 'form-highlight' : ''}`}>
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6"
+            onFocus={() => setIsFocused(true)}
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-xs uppercase tracking-widest text-[#d4a574] font-semibold">Name</label>

@@ -55,16 +55,6 @@ export const Contact: React.FC = () => {
 
   return (
     <div id="contact" className="relative z-10 py-24 px-6 md:px-[10%] min-h-screen flex flex-col justify-center">
-      <h4 className="autoShow font-['Roboto_Condensed'] text-[28px] font-light text-white uppercase tracking-[0.15em] mb-2.5 text-center">
-        Contact Me
-      </h4>
-      <div className="autoShow mb-16">
-        <img
-          src="https://res.cloudinary.com/atelier22/image/upload/c_scale,w_10/v1499770011/divider_p5wiwx.svg"
-          alt="divider"
-          className="w-20 opacity-30 mx-auto"
-        />
-      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start max-w-6xl mx-auto w-full">
         {/* Contact Info (Left) */}
@@ -98,12 +88,10 @@ export const Contact: React.FC = () => {
               <span className="text-lg font-light tracking-wide">Nairobi, Kenya</span>
             </div>
           </div>
-
-
         </div>
 
         {/* Contact Form (Right) */}
-        <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-2xl autoShow">
+        <div className="p-8 rounded-2xl autoShow">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">

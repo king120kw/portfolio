@@ -25,14 +25,7 @@ export const GetStarted: React.FC = () => {
         Let's discuss how we can transform your community together
       </h2>
 
-      <div className="autoShow mt-10">
-        <a
-          href="#contact"
-          className="inline-block py-3 px-10 bg-[#d4a574] text-[#1a2332] rounded-md font-['Roboto_Condensed'] text-base font-normal uppercase tracking-wider transition-all duration-300 hover:bg-[#c49563] hover:-translate-y-0.5 hover:shadow-[0_5px_15px_rgba(212,165,116,0.3)]"
-        >
-          Get In Touch
-        </a>
-      </div>
+
     </div>
   );
 };

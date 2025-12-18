@@ -39,16 +39,16 @@ export const Footer: React.FC = () => {
         </nav>
 
         <div className="flex justify-center gap-6 my-5">
-          <a href="#" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#1DA1F2]" aria-label="Twitter">
+          <a href="https://twitter.com/lookatmenow264" target="_blank" rel="noopener noreferrer" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#1DA1F2]" aria-label="Twitter">
             <Twitter className="w-5 h-5" />
           </a>
-          <a href="#" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#0077B5]" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/ismail-abdirahman" target="_blank" rel="noopener noreferrer" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#0077B5]" aria-label="LinkedIn">
             <Linkedin className="w-5 h-5" />
           </a>
-          <a href="https://wa.me/254740895374" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#25D366]" aria-label="WhatsApp">
+          <a href="https://wa.me/254740895374" target="_blank" rel="noopener noreferrer" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#25D366]" aria-label="WhatsApp">
             <MessageCircle className="w-5 h-5" />
           </a>
-          <a href="#" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#E4405F]" aria-label="Instagram">
+          <a href="https://instagram.com/I.s.mail__" target="_blank" rel="noopener noreferrer" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#E4405F]" aria-label="Instagram">
             <Instagram className="w-5 h-5" />
           </a>
         </div>

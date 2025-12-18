@@ -54,10 +54,10 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div id="contact" className="relative z-10 pt-0 pb-0 px-6 md:px-[10%] min-h-[auto] flex flex-col justify-center">
+    <div id="contact" className="relative z-10 pt-0 pb-16 px-6 md:px-[10%] min-h-[auto] flex flex-col justify-center">
       <div className="max-w-4xl mx-auto w-full">
-        {/* Contact Form (Centered) */}
-        <div className="bg-[#1a2b41] p-8 rounded-2xl border border-white/10 shadow-xl autoShow group hover:shadow-2xl transition-all duration-300">
+        {/* Contact Form (Centered Glassmorphism) */}
+        <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-2xl autoShow transition-all duration-500">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
@@ -68,7 +68,7 @@ export const Contact: React.FC = () => {
                   autoComplete="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-[#1a2332]/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] transition-colors"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] focus:bg-white/10 transition-all"
                   placeholder="John Doe"
                 />
               </div>
@@ -80,7 +80,7 @@ export const Contact: React.FC = () => {
                   autoComplete="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-[#1a2332]/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] transition-colors"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] focus:bg-white/10 transition-all"
                   placeholder="john@example.com"
                 />
               </div>
@@ -94,7 +94,7 @@ export const Contact: React.FC = () => {
                 autoComplete="off"
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                className="w-full bg-[#1a2332]/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] transition-colors"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] focus:bg-white/10 transition-all"
                 placeholder="Project Collaboration"
               />
             </div>
@@ -106,7 +106,7 @@ export const Contact: React.FC = () => {
                 rows={4}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full bg-[#1a2332]/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] transition-colors resize-none"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] focus:bg-white/10 transition-all resize-none"
                 placeholder="Tell me about your project..."
               />
             </div>

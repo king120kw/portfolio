@@ -54,7 +54,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div id="contact" className="relative z-10 py-24 px-6 md:px-[10%] min-h-screen flex flex-col justify-center">
+    <div id="contact" className="relative z-10 pb-24 px-6 md:px-[10%] min-h-[auto] flex flex-col justify-center">
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start max-w-6xl mx-auto w-full">
         {/* Contact Info (Left) */}
@@ -91,7 +91,7 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* Contact Form (Right) */}
-        <div className="p-8 rounded-2xl autoShow">
+        <div className="bg-[#1a2b41] p-8 rounded-2xl border border-white/10 shadow-xl autoShow">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">

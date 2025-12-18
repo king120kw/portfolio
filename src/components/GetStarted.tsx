@@ -2,7 +2,7 @@ import React from 'react';
 
 export const GetStarted: React.FC = () => {
   return (
-    <div id="getStarted" className="relative z-10 py-24 px-[10%] text-[#e8eef3]">
+    <div id="getStarted" className="relative z-10 pt-24 pb-8 px-[10%] text-[#e8eef3]">
       <h4 className="autoShow font-['Roboto_Condensed'] text-[40px] font-light uppercase tracking-[0.15em] mb-8 leading-tight">
         IMPACT GUARANTEE
       </h4>

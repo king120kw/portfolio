@@ -67,8 +67,8 @@ export const Navbar = () => {
       </div>
 
       {/* Mobile Quick Nav Bar (Horizontal Scroll) - Specific User Request */}
-      <div className={`md:hidden fixed top-0 left-0 right-0 z-40 bg-dark/95 backdrop-blur-md border-b border-white/10 transition-transform duration-300 ${isScrolled ? 'translate-y-0' : '-translate-y-full'}`}>
-        <div className="flex overflow-x-auto py-4 px-4 gap-4 no-scrollbar scroll-smooth">
+      <div className="md:hidden fixed top-[80px] left-0 right-0 z-40 bg-dark/95 backdrop-blur-md border-y border-white/10 shadow-lg">
+        <div className="flex overflow-x-auto py-3 px-4 gap-4 no-scrollbar scroll-smooth items-center">
           {navLinks.map((link) => (
             <a
               key={link.name}

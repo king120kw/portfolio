@@ -33,10 +33,10 @@ export const Navbar = () => {
   return (
     <>
       <div className="absolute top-5 left-8 z-50">
-        <img 
-          className="w-[50px] h-[50px] opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300" 
-          src="https://res.cloudinary.com/atelier22/image/upload/c_scale,w_50/v1498391916/mf_hex_logo_dttgy6.png" 
-          alt="IA logo" 
+        <img
+          className="w-[50px] h-[50px] opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
+          src="https://res.cloudinary.com/atelier22/image/upload/c_scale,w_50/v1498391916/mf_hex_logo_dttgy6.png"
+          alt="IA logo"
         />
       </div>
 
@@ -57,9 +57,10 @@ export const Navbar = () => {
 
       {/* Mobile Nav Toggle */}
       <div className="md:hidden fixed top-5 right-5 z-50">
-        <button 
+        <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="text-white p-2 bg-dark/50 rounded-full backdrop-blur-sm"
+          className="text-[#1a2332] p-3 bg-[#d4a574] rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+          aria-label="Toggle Menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

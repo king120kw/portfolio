@@ -99,23 +99,7 @@ export const Contact: React.FC = () => {
             </div>
           </div>
 
-          <div className="pt-8">
-            <p className="text-sm uppercase tracking-widest text-[#d4a574] mb-4 font-semibold">Socials</p>
-            <div className="flex gap-6">
-              <a href="#" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#1DA1F2]" aria-label="Twitter">
-                <Twitter className="w-6 h-6" />
-              </a>
-              <a href="#" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#0077B5]" aria-label="LinkedIn">
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a href="https://wa.me/254740895374" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#25D366]" aria-label="WhatsApp">
-                <MessageCircle className="w-6 h-6" />
-              </a>
-              <a href="#" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#E4405F]" aria-label="Instagram">
-                <Instagram className="w-6 h-6" />
-              </a>
-            </div>
-          </div>
+
         </div>
 
         {/* Contact Form (Right) */}

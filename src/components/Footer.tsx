@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
             { text: 'Services', id: 'services' },
             { text: 'My Work', id: 'portfolio' },
             { text: 'Get Started', id: 'getStarted' },
-            // Removed Contact link as requested
+            { text: 'Contact', id: 'contact' },
           ].map((item, index) => (
             <a
               key={index}

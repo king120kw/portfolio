@@ -9,6 +9,7 @@ export const Navbar = () => {
     { name: 'Services', href: '#services' },
     { name: 'My Work', href: '#portfolio' },
     { name: 'Get Started', href: '#getStarted' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

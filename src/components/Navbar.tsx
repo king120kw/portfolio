@@ -56,10 +56,11 @@ export const Navbar = () => {
       </nav>
 
       {/* Mobile Nav Toggle (Hamburger) */}
-      <div className="md:hidden fixed top-6 right-6 z-[100]">
+      {/* Mobile Nav Toggle (Hamburger) */}
+      <div className="md:hidden fixed top-4 right-4" style={{ zIndex: 9999 }}>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="flex items-center justify-center w-12 h-12 bg-[#d4a574] text-[#1a2332] rounded-full shadow-[0_0_20px_rgba(212,165,116,0.5)] active:scale-95 transition-all duration-300"
+          className="flex items-center justify-center w-12 h-12 bg-[#d4a574] text-[#1a2332] rounded-full shadow-[0_0_20px_rgba(212,165,116,0.8)] active:scale-95 transition-all duration-300 border-2 border-white/20"
           aria-label="Toggle Menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

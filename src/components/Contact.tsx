@@ -1,13 +1,8 @@
 import React from 'react';
+import { Twitter, Linkedin, Instagram, MessageCircle } from 'lucide-react';
 
 export const Contact: React.FC = () => {
-  const socialLinks = [
-    { icon: "https://res.cloudinary.com/atelier22/image/upload/v1499817073/twitter_o8du6p.svg", alt: "Twitter", url: "#" },
-    { icon: "https://res.cloudinary.com/atelier22/image/upload/v1499817069/linkedin_cxmdha.svg", alt: "LinkedIn", url: "#" },
-    { icon: "https://res.cloudinary.com/atelier22/image/upload/v1499817073/pinterest_vy6lou.svg", alt: "Pinterest", url: "#" },
-    { icon: "https://res.cloudinary.com/atelier22/image/upload/v1499817070/dribbble_dlajdw.svg", alt: "Dribbble", url: "#" },
-    { icon: "https://res.cloudinary.com/atelier22/image/upload/v1499817068/behance_xnix4r.svg", alt: "Behance", url: "#" }
-  ];
+  // Social links updated to use Lucide icons inline below
 
   return (
     <div id="contact" className="relative z-10 py-24 px-[10%]">
@@ -36,15 +31,18 @@ export const Contact: React.FC = () => {
       </p>
 
       <div className="mt-10 flex justify-center items-center gap-8">
-        {socialLinks.map((social, index) => (
-          <a key={index} href={social.url} target="_blank" rel="noopener noreferrer">
-            <img
-              src={social.icon}
-              alt={social.alt}
-              className="w-10 h-10 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:brightness-0 hover:invert"
-            />
-          </a>
-        ))}
+        <a href="#" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#1DA1F2]" aria-label="Twitter">
+          <Twitter className="w-8 h-8" />
+        </a>
+        <a href="#" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#0077B5]" aria-label="LinkedIn">
+          <Linkedin className="w-8 h-8" />
+        </a>
+        <a href="https://wa.me/254740895374" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#25D366]" aria-label="WhatsApp">
+          <MessageCircle className="w-8 h-8" />
+        </a>
+        <a href="#" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#E4405F]" aria-label="Instagram">
+          <Instagram className="w-8 h-8" />
+        </a>
       </div>
     </div>
   );

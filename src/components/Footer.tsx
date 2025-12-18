@@ -13,35 +13,19 @@ export const Footer: React.FC = () => {
       <div className="w-full pt-8 border-t border-white/5 flex flex-col items-center gap-6">
         <h3 className="text-2xl font-light text-[#d4a574] uppercase tracking-widest">Let's Collaborate</h3>
 
-        <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+        <div className="flex justify-center gap-6 flex-wrap">
+          {/* Email */}
           <a
             href="mailto:ismailabdirahman1767@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 text-gray-300 hover:text-[#d4a574] transition-colors group"
+            className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#d4a574]"
+            aria-label="Email"
           >
-            <div className="p-2 rounded-full bg-white/5 group-hover:bg-[#d4a574]/20 transition-colors border border-white/10">
-              <Mail className="w-5 h-5" />
-            </div>
-            <span className="text-sm font-light tracking-wide">ismailabdirahman1767@gmail.com</span>
+            <Mail className="w-5 h-5" />
           </a>
 
-          <div className="flex items-center gap-3 text-gray-300 group cursor-default">
-            <div className="p-2 rounded-full bg-white/5 border border-white/10">
-              <Phone className="w-5 h-5" />
-            </div>
-            <span className="text-sm font-light tracking-wide">+254 740 895374</span>
-          </div>
-
-          <div className="flex items-center gap-3 text-gray-300 group cursor-default">
-            <div className="p-2 rounded-full bg-white/5 border border-white/10">
-              <Globe className="w-5 h-5" />
-            </div>
-            <span className="text-sm font-light tracking-wide">Nairobi, Kenya</span>
-          </div>
-        </div>
-
-        <div className="flex justify-center gap-6">
+          {/* Social Icons */}
           <a href="https://twitter.com/lookatmenow264" target="_blank" rel="noopener noreferrer" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#1DA1F2]" aria-label="Twitter">
             <Twitter className="w-5 h-5" />
           </a>
@@ -53,6 +37,26 @@ export const Footer: React.FC = () => {
           </a>
           <a href="https://instagram.com/I.s.mail__" target="_blank" rel="noopener noreferrer" className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#E4405F]" aria-label="Instagram">
             <Instagram className="w-5 h-5" />
+          </a>
+
+          {/* Phone */}
+          <a
+            href="tel:+254740895374"
+            className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#d4a574]"
+            aria-label="Phone"
+          >
+            <Phone className="w-5 h-5" />
+          </a>
+
+          {/* Location */}
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Nairobi,Kenya"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transform hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#d4a574]"
+            aria-label="Location"
+          >
+            <Globe className="w-5 h-5" />
           </a>
         </div>
       </div>

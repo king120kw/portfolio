@@ -128,7 +128,7 @@ export const Carousel: React.FC = () => {
                                 <img
                                     src={item.image}
                                     alt="thumbnail"
-                                    className="project-card__thumb hidden w-[133px] h-[200px] md:h-[269px] object-cover rounded-lg shadow-lg border-2 border-[#d4a574]/50"
+                                    className="project-card__thumb w-[133px] h-[200px] md:h-[269px] object-cover rounded-lg shadow-lg border-2 border-[#d4a574]/50"
                                 />
 
                                 <div className="transition-all duration-500 flex flex-col items-center md:items-start text-center md:text-left">
@@ -136,7 +136,7 @@ export const Carousel: React.FC = () => {
                                         {item.title}
                                     </h3>
 
-                                    <div className="project-card__details hidden opacity-0 transition-opacity duration-500 delay-100 p-4 md:p-0">
+                                    <div className="project-card__details transition-opacity duration-500 delay-100 p-4 md:p-0">
                                         <p className="text-[#d4a574] text-sm font-medium mb-3 uppercase tracking-widest">
                                             {item.role}
                                         </p>

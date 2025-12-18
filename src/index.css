@@ -266,10 +266,31 @@ body {
   }
 }
 
-/* Details visibility */
+/* Details and Thumb visibility */
+.project-card .project-card__thumb,
+.project-card .project-card__details {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.project-card.active .project-card__thumb {
+  display: block;
+  opacity: 1;
+}
+
 .project-card.active .project-card__details {
   display: block;
   opacity: 1;
+}
+
+/* Mobile Contact Form Visibility Fix */
+@media (max-width: 768px) {
+  #contact .bg-white\/10 {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(12px) brightness(0.8) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+  }
 }
 
 

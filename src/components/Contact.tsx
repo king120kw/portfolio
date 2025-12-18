@@ -18,7 +18,8 @@ export const Contact: React.FC = () => {
     setStatus('idle');
 
     try {
-      const { error } = await supabase
+      // 1. Save to Database (Supabase)
+      const { error: dbError } = await supabase
         .from('contacts')
         .insert([
           {
@@ -29,7 +30,17 @@ export const Contact: React.FC = () => {
           }
         ]);
 
-      if (error) throw error;
+      if (dbError) throw dbError;
+
+      // 2. Send Email Alert (Netlify Function -> Resend)
+      try {
+        await fetch('/.netlify/functions/send-contact-email', {
+          method: 'POST',
+          body: JSON.stringify(formData),
+        });
+      } catch (emailError) {
+        console.warn('Email trigger failed:', emailError);
+      }
 
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });

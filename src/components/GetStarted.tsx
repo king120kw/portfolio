@@ -20,7 +20,7 @@ export const GetStarted: React.FC = () => {
   };
 
   return (
-    <div id="getStarted" className="bg-[#1a2332] py-24 px-[10%] text-[#e8eef3]">
+    <div id="getStarted" className="relative z-10 py-24 px-[10%] text-[#e8eef3]">
       <h4 className="font-['Roboto_Condensed'] text-[28px] font-light uppercase tracking-[0.15em] mb-2.5">
         Let's Work Together
       </h4>

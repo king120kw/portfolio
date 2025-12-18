@@ -9,18 +9,23 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 
+import BackgroundController from './components/BackgroundController';
+
 function App() {
   return (
-    <div className="font-sans text-center overflow-x-hidden">
-      <Hero />
-      <Quote />
-      <About />
-      <Services />
-      <Portfolio />
-      <GetStarted />
-      <Contact />
-      <Footer />
-      <ScrollToTop />
+    <div className="relative min-h-screen text-light font-sans selection:bg-primary/30 selection:text-primary scroll-smooth">
+      <BackgroundController />
+      <div className="font-sans text-center overflow-x-hidden relative z-10">
+        <Hero />
+        <Quote />
+        <About />
+        <Services />
+        <Portfolio />
+        <GetStarted />
+        <Contact />
+        <Footer />
+        <ScrollToTop />
+      </div>
     </div>
   );
 }

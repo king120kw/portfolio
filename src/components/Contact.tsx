@@ -10,8 +10,8 @@ export const Contact: React.FC = () => {
   ];
 
   return (
-    <div id="contact" className="bg-[#d4a574] py-24 px-[10%]">
-      <h4 className="font-['Roboto_Condensed'] text-[28px] font-light text-[#1a2332] uppercase tracking-[0.15em] mb-2.5">
+    <div id="contact" className="relative z-10 py-24 px-[10%]">
+      <h4 className="font-['Roboto_Condensed'] text-[28px] font-light text-white uppercase tracking-[0.15em] mb-2.5">
         Contact Me
       </h4>
       <div className="mb-16">
@@ -24,14 +24,14 @@ export const Contact: React.FC = () => {
 
       <a
         href="mailto:ismailabdirahman1767@gmail.com"
-        className="text-xl font-light tracking-[0.1em] text-[#1a2332] no-underline block my-5 transition-all duration-300 hover:text-white"
+        className="text-xl font-light tracking-[0.1em] text-white no-underline block my-5 transition-all duration-300 hover:text-[#d4a574]"
       >
         ismailabdirahman1767@gmail.com
       </a>
-      <p className="text-xl font-light tracking-[0.1em] text-[#1a2332] my-5">
+      <p className="text-xl font-light tracking-[0.1em] text-white my-5">
         +254 740 895374
       </p>
-      <p className="text-xl font-light tracking-[0.1em] text-[#1a2332] my-5">
+      <p className="text-xl font-light tracking-[0.1em] text-white my-5">
         Nairobi, Kenya
       </p>
 

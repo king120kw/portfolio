@@ -62,8 +62,8 @@ export const Portfolio: React.FC = () => {
   ];
 
   return (
-    <section id="portfolio" className="bg-[#e5eaee] py-24 px-[10%]">
-      <h4 className="font-['Roboto_Condensed'] text-[28px] font-light text-[#1a2332] uppercase tracking-[0.15em] mb-2.5">
+    <section id="portfolio" className="relative z-10 py-24 px-[10%]">
+      <h4 className="font-['Roboto_Condensed'] text-[28px] font-light text-white uppercase tracking-[0.15em] mb-2.5">
         Featured Projects
       </h4>
       <div className="mb-16">

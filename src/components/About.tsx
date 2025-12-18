@@ -35,12 +35,12 @@ export const About: React.FC = () => {
     <div
       id="about"
       ref={sectionRef}
-      className={`py-24 px-[10%] bg-white transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      className={`py-24 px-[10%] relative z-10 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
     >
       {/* Section Heading - Appears first */}
       <h4
-        className={`font-['Roboto_Condensed'] text-[28px] font-light text-[#1a2332] uppercase tracking-[0.15em] mb-2.5 transition-all duration-500 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'
+        className={`font-['Roboto_Condensed'] text-[28px] font-light text-white uppercase tracking-[0.15em] mb-2.5 transition-all duration-500 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'
           }`}
         style={{ transitionDelay: '100ms' }}
       >
@@ -122,13 +122,13 @@ export const About: React.FC = () => {
           }`}
         style={{ transitionDelay: '800ms' }}
       >
-        <p className="my-5 text-base leading-relaxed text-[#333]">
+        <p className="my-5 text-base leading-relaxed text-gray-300">
           I am a dynamic community development professional with extensive experience in youth empowerment and operations management.
         </p>
-        <p className="my-5 text-base leading-relaxed text-[#333]">
+        <p className="my-5 text-base leading-relaxed text-gray-300">
           I combine strategic leadership with hands-on project execution to drive sustainable social impact across Kenyan communities.
         </p>
-        <p className="my-5 text-base leading-relaxed text-[#333]">
+        <p className="my-5 text-base leading-relaxed text-gray-300">
           My expertise spans from coordinating multi-faith youth initiatives to managing construction sites, always focusing on creating opportunities for marginalized groups.
         </p>
       </div>

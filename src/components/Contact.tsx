@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Send, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabaseClient';
 
@@ -14,9 +14,22 @@ export const Contact: React.FC = () => {
   const [isFocused, setIsFocused] = useState(false);
 
   // Clear focus when clicking outside (on the main container)
-  const handleContainerClick = () => {
+  const handleContainerClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setIsFocused(true);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const contactSection = document.getElementById('contact-form-container');
+      if (contactSection && !contactSection.contains(event.target as Node)) {
+        setIsFocused(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -67,7 +80,10 @@ export const Contact: React.FC = () => {
     >
       <div className="max-w-4xl mx-auto w-full">
         {/* Contact Form (Centered Glassmorphism) */}
-        <div className={`bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-2xl autoShow transition-all duration-500 ${isFocused ? 'form-highlight' : ''}`}>
+        <div
+          id="contact-form-container"
+          className={`bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-2xl autoShow transition-all duration-500 ${isFocused ? 'form-highlight' : ''}`}
+        >
           <form
             onSubmit={handleSubmit}
             className="space-y-6"

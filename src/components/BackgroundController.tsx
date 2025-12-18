@@ -7,6 +7,7 @@ const backgrounds = [
     { id: 'services', image: '/bg-services.jpg' },
     { id: 'portfolio', image: '/bg-portfolio.jpg' },
     { id: 'getStarted', image: '/bg-contact.png' },
+    { id: 'contact', image: '/bg-contact.png' },
 ];
 
 export default function BackgroundController() {

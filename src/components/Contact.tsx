@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Twitter, Linkedin, Instagram, MessageCircle, Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react';
+import { Send, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabaseClient';
 
 export const Contact: React.FC = () => {
@@ -54,44 +54,10 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div id="contact" className="relative z-10 pb-24 px-6 md:px-[10%] min-h-[auto] flex flex-col justify-center">
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start max-w-6xl mx-auto w-full">
-        {/* Contact Info (Left) */}
-        <div className="space-y-8 autoShow">
-          <div className="text-left space-y-6">
-            <h3 className="text-3xl font-light text-[#d4a574]">Let's Collaborate</h3>
-            <p className="text-gray-300 font-light leading-relaxed">
-              I'm always open to discussing construction projects, community initiatives, or mentorship opportunities.
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            <a href="mailto:ismailabdirahman1767@gmail.com" className="flex items-center gap-4 text-white hover:text-[#d4a574] transition-colors group">
-              <div className="p-3 rounded-full bg-white/5 group-hover:bg-[#d4a574]/20 transition-colors border border-white/10">
-                <Mail className="w-6 h-6" />
-              </div>
-              <span className="text-lg font-light tracking-wide">ismailabdirahman1767@gmail.com</span>
-            </a>
-
-            <div className="flex items-center gap-4 text-white">
-              <div className="p-3 rounded-full bg-white/5 border border-white/10">
-                <Phone className="w-6 h-6" />
-              </div>
-              <span className="text-lg font-light tracking-wide">+254 740 895374</span>
-            </div>
-
-            <div className="flex items-center gap-4 text-white">
-              <div className="p-3 rounded-full bg-white/5 border border-white/10">
-                <MapPin className="w-6 h-6" />
-              </div>
-              <span className="text-lg font-light tracking-wide">Nairobi, Kenya</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Contact Form (Right) */}
-        <div className="bg-[#1a2b41] p-8 rounded-2xl border border-white/10 shadow-xl autoShow">
+    <div id="contact" className="relative z-10 pt-0 pb-0 px-6 md:px-[10%] min-h-[auto] flex flex-col justify-center">
+      <div className="max-w-4xl mx-auto w-full">
+        {/* Contact Form (Centered) */}
+        <div className="bg-[#1a2b41] p-8 rounded-2xl border border-white/10 shadow-xl autoShow group hover:shadow-2xl transition-all duration-300">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
@@ -99,7 +65,6 @@ export const Contact: React.FC = () => {
                 <input
                   type="text"
                   required
-                  readOnly={false}
                   autoComplete="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -112,7 +77,6 @@ export const Contact: React.FC = () => {
                 <input
                   type="email"
                   required
-                  readOnly={false}
                   autoComplete="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -127,7 +91,6 @@ export const Contact: React.FC = () => {
               <input
                 type="text"
                 required
-                readOnly={false}
                 autoComplete="off"
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -140,7 +103,6 @@ export const Contact: React.FC = () => {
               <label className="text-xs uppercase tracking-widest text-[#d4a574] font-semibold">Message</label>
               <textarea
                 required
-                readOnly={false}
                 rows={4}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}

@@ -1,58 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
 import { Carousel } from './Carousel';
 
 export const About: React.FC = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !isVisible) {
-            setIsVisible(true);
-          }
-        });
-      },
-      {
-        threshold: 0.1, // Trigger when 10% of section is visible
-        rootMargin: '0px 0px -50px 0px' // Slight offset from bottom
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, [isVisible]);
-
   return (
     <div
       id="about"
-      ref={sectionRef}
-      className={`py-24 px-[10%] relative z-10 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
+      className="py-24 px-[10%] relative z-10"
     >
-      {/* Section Heading - Appears first */}
-      <h4
-        className={`font-['Roboto_Condensed'] text-[28px] font-light text-white uppercase tracking-[0.15em] mb-2.5 transition-all duration-500 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
-        style={{ transitionDelay: '100ms' }}
-      >
+      {/* Section Heading */}
+      <h4 className="autoShow font-['Roboto_Condensed'] text-[28px] font-light text-white uppercase tracking-[0.15em] mb-2.5">
         About Me
       </h4>
 
-      {/* Divider - Appears after heading */}
-      <div
-        className={`mb-16 transition-opacity duration-400 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
-        style={{ transitionDelay: '300ms' }}
-      >
+      {/* Divider */}
+      <div className="autoShow mb-16">
         <img
           src="https://res.cloudinary.com/atelier22/image/upload/c_scale,w_10/v1499770011/divider_p5wiwx.svg"
           alt="divider"
@@ -60,12 +20,8 @@ export const About: React.FC = () => {
         />
       </div>
 
-      {/* Profile Image Card - Appears after divider with upward movement */}
-      <div
-        className={`my-10 flex justify-center transition-all duration-600 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-        style={{ transitionDelay: '500ms' }}
-      >
+      {/* Profile Image Card */}
+      <div className="autoShow my-10 flex justify-center">
         <div className="relative group">
           {/* Card Container with gradient background */}
           <div className="relative w-[280px] h-[360px] rounded-[32px] overflow-hidden bg-gradient-to-b from-[#d4a574]/20 via-[#4a6278]/10 to-[#2d3e50]/20 shadow-[0_20px_60px_rgba(0,0,0,0.15)] transition-all duration-500 ease-out group-hover:shadow-[0_25px_70px_rgba(0,0,0,0.25)] group-hover:scale-[1.02]">
@@ -116,12 +72,8 @@ export const About: React.FC = () => {
         </div>
       </div>
 
-      {/* Text Content - Appears last as a single block */}
-      <div
-        className={`max-w-[800px] mx-auto transition-all duration-500 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
-        style={{ transitionDelay: '800ms' }}
-      >
+      {/* Text Content */}
+      <div className="autoShow max-w-[800px] mx-auto">
         <p className="my-5 text-base leading-relaxed text-gray-300">
           I am a dynamic community development professional with extensive experience in youth empowerment and operations management.
         </p>
@@ -133,12 +85,8 @@ export const About: React.FC = () => {
         </p>
       </div>
 
-      {/* Carousel - Replaces Skills Visualization */}
-      <div
-        className={`mt-4 transition-all duration-500 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
-        style={{ transitionDelay: '1000ms' }}
-      >
+      {/* Carousel */}
+      <div className="autoShow mt-4">
         <Carousel />
       </div>
     </div>

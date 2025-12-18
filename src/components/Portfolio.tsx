@@ -1,3 +1,4 @@
+// ... imports
 import React, { useState } from 'react';
 import ProjectModal from './ProjectModal';
 
@@ -11,10 +12,10 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ image, title, onClick }) 
   return (
     <div
       onClick={onClick}
-      className="relative h-[250px] bg-cover bg-center rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.02] group shadow-lg"
+      className="portfolio-item autoShow relative h-[250px] bg-cover bg-center rounded-xl overflow-hidden cursor-pointer transition-all duration-500 ease-out shadow-lg"
       style={{ backgroundImage: `url(${image})` }}
     >
-      <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-[rgba(26,35,50,0.9)] via-transparent to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8 group-hover:opacity-100 backdrop-blur-[2px]">
+      <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-[rgba(26,35,50,0.9)] via-transparent to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8 hover:opacity-100 backdrop-blur-[2px]">
         <div className="text-[#d4a574] font-['Roboto_Condensed'] text-xl font-bold uppercase mb-2.5 drop-shadow-md">
           {title}
         </div>
@@ -96,10 +97,10 @@ export const Portfolio: React.FC = () => {
   return (
     <>
       <section id="portfolio" className="relative z-10 py-24 px-[10%]">
-        <h4 className="font-['Roboto_Condensed'] text-[28px] font-light text-white uppercase tracking-[0.15em] mb-2.5">
+        <h4 className="autoShow font-['Roboto_Condensed'] text-[28px] font-light text-white uppercase tracking-[0.15em] mb-2.5">
           Featured Projects
         </h4>
-        <div className="mb-16">
+        <div className="autoShow mb-16">
           <img
             src="https://res.cloudinary.com/atelier22/image/upload/c_scale,w_10/v1499770011/divider_p5wiwx.svg"
             alt="divider"
@@ -107,7 +108,7 @@ export const Portfolio: React.FC = () => {
           />
         </div>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5 max-w-[1200px] mx-auto">
+        <div className="portfolio-grid grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5 max-w-[1200px] mx-auto">
           {projects.map((project, index) => (
             <PortfolioItem
               key={index}

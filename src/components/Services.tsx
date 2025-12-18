@@ -9,7 +9,7 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ Icon, title, description }) => {
   return (
-    <div className="group p-10 bg-white/10 backdrop-blur-md border border-white/10 rounded-xl shadow-[0_5px_20px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-2.5 hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)] flex flex-col items-center text-center">
+    <div className="active:scale-95 autoShow group p-10 bg-white/10 backdrop-blur-md border border-white/10 rounded-xl shadow-[0_5px_20px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-2.5 hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)] flex flex-col items-center text-center">
       <div className="mb-6 relative">
         <div className="absolute inset-0 bg-[#d4a574]/10 rounded-full scale-0 transition-transform duration-500 group-hover:scale-150"></div>
         <Icon
@@ -49,10 +49,10 @@ export const Services: React.FC = () => {
 
   return (
     <div id="services" className="relative z-10 py-24 px-[10%]">
-      <h4 className="font-['Roboto_Condensed'] text-[28px] font-light text-white uppercase tracking-[0.15em] mb-2.5 text-center">
+      <h4 className="autoShow font-['Roboto_Condensed'] text-[28px] font-light text-white uppercase tracking-[0.15em] mb-2.5 text-center">
         Services
       </h4>
-      <div className="mb-16">
+      <div className="autoShow mb-16">
         <img
           src="https://res.cloudinary.com/atelier22/image/upload/c_scale,w_10/v1499770011/divider_p5wiwx.svg"
           alt="divider"

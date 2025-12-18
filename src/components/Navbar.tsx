@@ -46,8 +46,7 @@ export const Navbar = () => {
       </nav>
 
       {/* Mobile Nav Toggle (Hamburger) */}
-      {/* Mobile Nav Toggle (Hamburger) */}
-      <div className="md:hidden fixed top-4 right-4" style={{ zIndex: 9999 }}>
+      <div className="md:hidden fixed top-6 right-6" style={{ zIndex: 10000 }}>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="flex items-center justify-center w-12 h-12 bg-[#d4a574] text-[#1a2332] rounded-full shadow-[0_0_20px_rgba(212,165,116,0.8)] active:scale-95 transition-all duration-300 border-2 border-white/20"
@@ -59,13 +58,13 @@ export const Navbar = () => {
 
       {/* Mobile Nav Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-dark/95 z-40 flex flex-col items-center justify-center space-y-8 md:hidden">
+        <div className="fixed inset-0 bg-[#1a2332]/98 z-[9999] flex flex-col items-center justify-center space-y-8 md:hidden backdrop-blur-sm animate-fade-in">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-light text-xl font-condensed uppercase tracking-widest hover:text-primary"
+              className="text-[#e8eef3] text-2xl font-['Roboto_Condensed'] uppercase tracking-[0.2em] hover:text-[#d4a574] transition-colors duration-300 transform hover:scale-110"
             >
               {link.name}
             </a>

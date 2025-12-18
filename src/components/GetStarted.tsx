@@ -64,10 +64,10 @@ export const GetStarted: React.FC = () => {
 
   return (
     <div id="getStarted" className="relative z-10 py-24 px-[10%] text-[#e8eef3]">
-      <h4 className="font-['Roboto_Condensed'] text-[28px] font-light uppercase tracking-[0.15em] mb-2.5">
+      <h4 className="autoShow font-['Roboto_Condensed'] text-[28px] font-light uppercase tracking-[0.15em] mb-2.5">
         Let's Work Together
       </h4>
-      <div className="mb-16">
+      <div className="autoShow mb-16">
         <img
           src="https://res.cloudinary.com/atelier22/image/upload/c_scale,w_10/v1499770011/divider_p5wiwx.svg"
           alt="divider"
@@ -75,23 +75,24 @@ export const GetStarted: React.FC = () => {
         />
       </div>
 
-      <p className="text-sm font-light tracking-[0.1em] text-[#e8eef3] mb-8">
+      <p className="autoShow text-sm font-light tracking-[0.1em] text-[#e8eef3] mb-8">
         Ready to create positive change? I'm committed to delivering impactful solutions.
       </p>
-      <h1 className="font-['Roboto_Condensed'] text-[clamp(1.8rem,4vw,2.5rem)] font-light uppercase tracking-[0.15em] text-[#d4a574] my-8 leading-snug">
+      <h1 className="autoBLur font-['Roboto_Condensed'] text-[clamp(1.8rem,4vw,2.5rem)] font-light uppercase tracking-[0.15em] text-[#d4a574] my-8 leading-snug">
         Impact Guarantee
       </h1>
-      <p className="text-sm font-light tracking-[0.1em] text-[#e8eef3] mb-10">
+      <p className="autoShow text-sm font-light tracking-[0.1em] text-[#e8eef3] mb-10">
         Every project prioritizes community benefit and sustainable outcomes
       </p>
-      <h2 className="text-lg font-light tracking-[0.1em] text-[#8b9db0] my-10">
+      <h2 className="autoShow text-lg font-light tracking-[0.1em] text-[#8b9db0] my-10">
         Let's discuss how we can transform your community together
       </h2>
 
       <form
         onSubmit={handleSubmit}
-        className="max-w-[600px] mx-auto mt-10"
+        className="autoShow max-w-[600px] mx-auto mt-10"
       >
+        {/* ... form content ... */}
         <div className="my-2.5">
           <label htmlFor="name" className="block text-left mb-1 text-sm text-[#8b9db0]">
             Name

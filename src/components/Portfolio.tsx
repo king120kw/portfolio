@@ -76,6 +76,7 @@ export const Portfolio: React.FC = () => {
       image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&h=400&fit=crop",
       title: "Sustainable Feeding Initiative",
       description: "Managed logistics and operations for large-scale community feeding programs aimed at food-insecure populations. ensuring dignity, efficiency, and nutritional value in delivery systems while building long-term food security partnerships.",
+      videoUrl: "/Sustainable Feeding Initiative mp4.mp4",
       details: [
         "Delivered over 10,000 meals to vulnerable families during crisis periods.",
         "Implemented a transparent tracking system for donor funds and resource distribution.",

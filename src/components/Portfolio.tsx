@@ -46,7 +46,7 @@ export const Portfolio: React.FC = () => {
       image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&h=400&fit=crop",
       title: "Multi-faith Collaboration",
       description: "Spearheaded community initiatives designed to bridge cultural and religious divides. Facilitated high-impact dialogue sessions and collaborative workshops that fostered mutual understanding and unity among diverse community groups, establishing a localized conflict resolution framework.",
-      videoUrl: "/Multi-faith Collaboration.mp4",
+      videoUrl: "/multifaith-collaboration.mp4",
       details: [
         "Organized 12+ interfaith dialogue forums with 200+ active participants.",
         "Developed a 'Unity in Diversity' workshop curriculum adopted by local community centers.",
@@ -57,7 +57,7 @@ export const Portfolio: React.FC = () => {
       image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop",
       title: "Educational Mentorship",
       description: "Designed and implemented comprehensive mentorship programs focused on empowering marginalized youth. Provided career guidance, academic tutoring, and soft-skills development to equip the next generation with the tools needed for professional success and civic engagement.",
-      videoUrl: "/Educational Mentorship mp4.mp4",
+      videoUrl: "/educational-mentorship.mp4",
       details: [
         "Mentored 500+ students across 3 years, achieving a 90% college transition rate.",
         "Partnered with local businesses to create internship pathways for high-school graduates.",

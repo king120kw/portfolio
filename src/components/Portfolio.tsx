@@ -89,6 +89,7 @@ export const Portfolio: React.FC = () => {
       image: "https://images.unsplash.com/photo-1594818379496-da1e345b0ded?w=600&h=400&fit=crop",
       title: "Emergency Response",
       description: "Coordinated rapid response teams for local emergencies, managing volunteer deployment and resource distribution. Focused on immediate relief efforts and long-term recovery planning for affected communities.",
+      videoUrl: "/emergency-response.mp4",
       details: [
         "Led a volunteer response team of 40 members during regional flood incidents.",
         "Set up temporary shelter and aid distribution centers within 24 hours of crises.",

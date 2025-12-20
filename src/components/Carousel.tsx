@@ -14,7 +14,7 @@ const items: CarouselItem[] = [
         id: 0,
         image: '/carousel-1.jpg',
         title: 'Strategic Leadership',
-        role: 'Chairperson, Youth Hearts',
+        role: 'Secretary; Source of Hope',
         quote: '"Transforming communities requires more than just vision; it demands the strategic alignment of people, resources, and purpose."',
         alt: 'Ismail in professional suit'
     },

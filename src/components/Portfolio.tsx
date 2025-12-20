@@ -46,6 +46,7 @@ export const Portfolio: React.FC = () => {
       image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&h=400&fit=crop",
       title: "Multi-faith Collaboration",
       description: "Spearheaded community initiatives designed to bridge cultural and religious divides. Facilitated high-impact dialogue sessions and collaborative workshops that fostered mutual understanding and unity among diverse community groups, establishing a localized conflict resolution framework.",
+      videoUrl: "/Multi-faith Collaboration.mp4",
       details: [
         "Organized 12+ interfaith dialogue forums with 200+ active participants.",
         "Developed a 'Unity in Diversity' workshop curriculum adopted by local community centers.",

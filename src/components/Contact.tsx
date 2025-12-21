@@ -11,6 +11,7 @@ export const Contact: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
   const [isFocused, setIsFocused] = useState(false);
 
   // Clear focus when clicking outside (on the main container)
@@ -75,9 +76,10 @@ export const Contact: React.FC = () => {
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error submitting form:', error);
       setStatus('error');
+      setErrorMessage(error.message || 'An unexpected error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -176,8 +178,9 @@ export const Contact: React.FC = () => {
               </div>
             )}
             {status === 'error' && (
-              <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-200 text-center animate-fade-in">
-                Failed to send message. Please try again or email me directly.
+              <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-200 text-center animate-fade-in flex flex-col gap-1">
+                <span className="font-bold">Failed to send message:</span>
+                <span className="text-sm opacity-90">{errorMessage}</span>
               </div>
             )}
           </form>

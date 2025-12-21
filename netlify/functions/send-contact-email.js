@@ -1,7 +1,6 @@
 const { Resend } = require('resend');
 
-// Note: In production, use process.env.RESEND_API_KEY
-const resend = new Resend('re_9kfsuYSN_4BarZAww9vMpJ4QMtntcUS1J');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 exports.handler = async (event, context) => {
     // Only allow POST
@@ -11,6 +10,12 @@ exports.handler = async (event, context) => {
 
     try {
         const { name, email, subject, message } = JSON.parse(event.body);
+        console.log(`Sending email for inquiry: ${subject} from ${name} (${email})`);
+
+        if (!process.env.RESEND_API_KEY) {
+            console.error('RESEND_API_KEY is not set in environment variables');
+            throw new Error('Server configuration error');
+        }
 
         const data = await resend.emails.send({
             from: 'onboarding@resend.dev', // Resend "Testing" domain (works for Verified email)
@@ -27,15 +32,20 @@ exports.handler = async (event, context) => {
       `
         });
 
+        console.log('Email sent successfully:', data);
+
         return {
             statusCode: 200,
             body: JSON.stringify({ success: true, data }),
         };
     } catch (error) {
-        console.error('Email Error:', error);
+        console.error('Email Error Details:', error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: error.message }),
+            body: JSON.stringify({
+                error: error.message,
+                details: error.response ? error.response.data : 'No additional details'
+            }),
         };
     }
 };

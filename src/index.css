@@ -100,6 +100,12 @@ body {
   font-family: 'Roboto', sans-serif;
   text-align: center;
   overflow-x: hidden;
+  transition: filter 0.5s ease;
+}
+
+.contact-active .background-layer {
+  filter: blur(20px) brightness(0.5);
+  transition: filter 0.5s ease;
 }
 
 /* Pulse animation for status badge */
@@ -297,14 +303,30 @@ body {
 .form-highlight {
   border-color: rgba(212, 165, 116, 0.8) !important;
   box-shadow:
-    0 0 40px rgba(212, 165, 116, 0.15),
-    0 30px 60px -12px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
-  background-color: rgba(255, 255, 255, 0.15) !important;
-  backdrop-filter: blur(25px) saturate(180%) contrast(110%) !important;
-  -webkit-backdrop-filter: blur(25px) saturate(180%) contrast(110%) !important;
-  transform: perspective(1000px) translateZ(15px) scale(1.01) !important;
-  z-index: 20;
+    0 40px 100px rgba(0, 0, 0, 0.8),
+    0 0 50px rgba(212, 165, 116, 0.2) !important;
+  background-color: #1a2332 !important;
+  /* Solid dark blue as requested */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transform: scale(1.02) !important;
+  z-index: 50;
+}
+
+/* Underline inputs for refined look */
+.contact-underline-input {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  transition: border-color 0.3s ease;
+}
+
+.contact-underline-input:focus {
+  border-bottom-color: #d4a574 !important;
+  box-shadow: none !important;
 }
 
 /* HD Content Clarity during Highlight */

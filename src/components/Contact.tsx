@@ -20,6 +20,14 @@ export const Contact: React.FC = () => {
   };
 
   useEffect(() => {
+    if (isFocused) {
+      document.body.classList.add('contact-active');
+    } else {
+      document.body.classList.remove('contact-active');
+    }
+  }, [isFocused]);
+
+  useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const contactSection = document.getElementById('contact-form-container');
       if (contactSection && !contactSection.contains(event.target as Node)) {
@@ -28,7 +36,10 @@ export const Contact: React.FC = () => {
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.body.classList.remove('contact-active');
+    };
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -98,8 +109,8 @@ export const Contact: React.FC = () => {
                   autoComplete="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] focus:bg-white/10 transition-all"
-                  placeholder="John Doe"
+                  className="w-full contact-underline-input px-0 py-3 text-white focus:outline-none transition-all placeholder:text-white/30"
+                  placeholder="name"
                 />
               </div>
               <div className="space-y-2">
@@ -110,8 +121,8 @@ export const Contact: React.FC = () => {
                   autoComplete="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] focus:bg-white/10 transition-all"
-                  placeholder="john@example.com"
+                  className="w-full contact-underline-input px-0 py-3 text-white focus:outline-none transition-all placeholder:text-white/30"
+                  placeholder="email"
                 />
               </div>
             </div>
@@ -124,8 +135,8 @@ export const Contact: React.FC = () => {
                 autoComplete="off"
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] focus:bg-white/10 transition-all"
-                placeholder="Project Collaboration"
+                className="w-full contact-underline-input px-0 py-3 text-white focus:outline-none transition-all placeholder:text-white/30"
+                placeholder="subject"
               />
             </div>
 
@@ -136,8 +147,8 @@ export const Contact: React.FC = () => {
                 rows={4}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4a574] focus:bg-white/10 transition-all resize-none"
-                placeholder="Tell me about your project..."
+                className="w-full contact-underline-input px-0 py-3 text-white focus:outline-none transition-all resize-none placeholder:text-white/30"
+                placeholder="message"
               />
             </div>
 

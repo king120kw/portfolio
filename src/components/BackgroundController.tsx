@@ -62,7 +62,7 @@ export default function BackgroundController() {
                             animate={{ opacity: 0.2 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 1.5, ease: "easeInOut" }}
-                            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
+                            className="background-layer absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
                             style={{ backgroundImage: `url(${currentBg})` }}
                         />
 
@@ -73,7 +73,7 @@ export default function BackgroundController() {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 1.5, ease: "easeInOut" }}
-                            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
+                            className="background-layer absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
                             style={{
                                 backgroundImage: `url(${currentBg})`,
                                 maskImage: `radial-gradient(circle 400px at ${mousePos.x}px ${mousePos.y}px, black, transparent)`,

@@ -49,7 +49,21 @@ export const Contact: React.FC = () => {
     setStatus('idle');
 
     try {
-      // 1. Save to Database (Supabase)
+      // 1. Submit to Netlify Forms
+      const netlifyFormData = new FormData();
+      netlifyFormData.append('form-name', 'contact');
+      netlifyFormData.append('name', formData.name);
+      netlifyFormData.append('email', formData.email);
+      netlifyFormData.append('subject', formData.subject);
+      netlifyFormData.append('message', formData.message);
+
+      await fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(netlifyFormData as any).toString()
+      });
+
+      // 2. Submit to Supabase (Database Record)
       const { error: dbError } = await supabase
         .from('contacts')
         .insert([
@@ -62,16 +76,6 @@ export const Contact: React.FC = () => {
         ]);
 
       if (dbError) throw dbError;
-
-      // 2. Send Email Alert (Netlify Function -> Resend)
-      try {
-        await fetch('/.netlify/functions/send-contact-email', {
-          method: 'POST',
-          body: JSON.stringify(formData),
-        });
-      } catch (emailError) {
-        console.warn('Email trigger failed:', emailError);
-      }
 
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -98,10 +102,15 @@ export const Contact: React.FC = () => {
           className={`bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-2xl autoShow transition-all duration-500 ${isFocused ? 'form-highlight' : ''}`}
         >
           <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
             onSubmit={handleSubmit}
             className="space-y-6"
             onFocus={() => setIsFocused(true)}
           >
+            {/* Netlify Hidden Form Name */}
+            <input type="hidden" name="form-name" value="contact" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-xs uppercase tracking-widest text-[#d4a574] font-semibold">Name</label>

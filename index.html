@@ -24,6 +24,15 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Hidden form for Netlify Form detection -->
+    <form name="contact" data-netlify="true" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+    </form>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

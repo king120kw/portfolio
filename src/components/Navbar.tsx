@@ -50,16 +50,16 @@ export const Navbar = () => {
       <div className="md:hidden fixed top-6 right-6" style={{ zIndex: 10000 }}>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="flex flex-col items-center justify-center w-12 h-12 bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] active:scale-95 transition-all duration-300 border border-black/5"
+          className="flex flex-col items-center justify-center w-12 h-12 bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] active:scale-95 transition-all duration-300 border border-black/5 hover:scale-110 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:border-[#3b82f6]/30 group"
           aria-label="Toggle Menu"
         >
           {isMobileMenuOpen ? (
             <X size={24} className="text-[#3b82f6]" />
           ) : (
-            <div className="flex flex-col gap-1 items-center justify-center">
-              <div className="w-6 h-[2px] bg-[#3b82f6] rounded-full"></div>
-              <div className="w-6 h-[2px] bg-[#3b82f6] rounded-full"></div>
-              <div className="w-6 h-[2px] bg-[#3b82f6] rounded-full"></div>
+            <div className="flex flex-col gap-1 items-center justify-center transition-transform group-hover:scale-110">
+              <div className="w-6 h-[2px] bg-[#3b82f6] rounded-full transition-colors group-hover:bg-[#2563eb]"></div>
+              <div className="w-6 h-[2px] bg-[#3b82f6] rounded-full transition-colors group-hover:bg-[#2563eb]"></div>
+              <div className="w-6 h-[2px] bg-[#3b82f6] rounded-full transition-colors group-hover:bg-[#2563eb]"></div>
             </div>
           )}
         </button>

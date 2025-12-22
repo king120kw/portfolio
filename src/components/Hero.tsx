@@ -10,12 +10,7 @@ export const Hero: React.FC = () => {
     "dedicated to sustainable change"
   ];
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+
 
   return (
     <header className="relative h-screen bg-gradient-to-br from-[#1a2332] via-[#2d3e50] to-[#1a2332] bg-[length:400%_400%] animate-gradientShift flex flex-col justify-center items-center overflow-hidden">
@@ -27,32 +22,7 @@ export const Hero: React.FC = () => {
         }}
       />
 
-      {/* Logo */}
-      <div className="absolute top-5 left-8 z-[100]">
-        <img
-          className="w-[50px] h-[50px] opacity-80 transition-all duration-300 hover:opacity-100 hover:scale-110"
-          src="https://res.cloudinary.com/atelier22/image/upload/c_scale,w_50/v1498391916/mf_hex_logo_dttgy6.png"
-          alt="IA logo"
-        />
-      </div>
-
-      {/* Navigation */}
-      <nav className="absolute top-8 right-8 z-[100] hidden md:block">
-        {['About Me', 'Services', 'My Work', 'Get Started', 'Contact'].map((item, index) => {
-          const sectionIds = ['about', 'services', 'portfolio', 'getStarted', 'contact'];
-          return (
-            <a
-              key={index}
-              onClick={() => scrollToSection(sectionIds[index])}
-              className="inline-block ml-6 text-[#e8eef3] text-xs font-light uppercase tracking-wider cursor-pointer transition-all duration-300 relative
-                         after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-[2px] after:bg-[#d4a574] after:transition-all after:duration-300
-                         hover:text-[#d4a574] hover:after:w-full"
-            >
-              {item}
-            </a>
-          );
-        })}
-      </nav>
+      {/* Navigation and Logo moved to Navbar component */}
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-[900px] px-5">

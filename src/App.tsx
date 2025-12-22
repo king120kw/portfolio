@@ -1,5 +1,6 @@
-import React from 'react';
+
 import { Hero } from './components/Hero';
+import { Navbar } from './components/Navbar';
 import { Quote } from './components/Quote';
 import { About } from './components/About';
 import { Services } from './components/Services';
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="relative min-h-screen text-light font-sans selection:bg-primary/30 selection:text-primary scroll-smooth">
       <BackgroundController />
+      <Navbar />
       <div className="font-sans text-center overflow-x-hidden relative z-10">
         <Hero />
         <Quote />

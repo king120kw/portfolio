@@ -104,6 +104,7 @@ export const Contact: React.FC = () => {
           <form
             name="contact"
             method="POST"
+            action="/"
             data-netlify="true"
             onSubmit={handleSubmit}
             className="space-y-6"
@@ -116,6 +117,7 @@ export const Contact: React.FC = () => {
                 <label className="text-xs uppercase tracking-widest text-[#d4a574] font-semibold">Name</label>
                 <input
                   type="text"
+                  name="name"
                   required
                   autoComplete="name"
                   value={formData.name}
@@ -128,6 +130,7 @@ export const Contact: React.FC = () => {
                 <label className="text-xs uppercase tracking-widest text-[#d4a574] font-semibold">Email</label>
                 <input
                   type="email"
+                  name="email"
                   required
                   autoComplete="email"
                   value={formData.email}
@@ -142,6 +145,7 @@ export const Contact: React.FC = () => {
               <label className="text-xs uppercase tracking-widest text-[#d4a574] font-semibold">Subject</label>
               <input
                 type="text"
+                name="subject"
                 required
                 autoComplete="off"
                 value={formData.subject}
@@ -154,6 +158,7 @@ export const Contact: React.FC = () => {
             <div className="space-y-2">
               <label className="text-xs uppercase tracking-widest text-[#d4a574] font-semibold">Message</label>
               <textarea
+                name="message"
                 required
                 rows={4}
                 value={formData.message}

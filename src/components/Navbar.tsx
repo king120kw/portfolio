@@ -1,8 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show menu only when in the Hero section (top of page)
+      // Usually Hero is 100vh. We'll use a threshold of 300px for better UX or 
+      // window.innerHeight if we want exactly the hero section.
+      const scrollThreshold = window.innerHeight * 0.8;
+      setIsVisible(window.scrollY < scrollThreshold);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { name: 'About Me', href: '#about' },
@@ -47,7 +61,10 @@ export const Navbar = () => {
       </nav>
 
       {/* Mobile Nav Toggle (Hamburger) */}
-      <div className="md:hidden fixed top-6 right-6" style={{ zIndex: 10000 }}>
+      <div
+        className={`md:hidden fixed top-6 right-6 transition-all duration-500 z-[10000] ${isVisible || isMobileMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'
+          }`}
+      >
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="flex flex-col items-center justify-center w-12 h-12 bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] active:scale-95 transition-all duration-300 border border-black/5 hover:scale-110 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:border-[#3b82f6]/30 group"

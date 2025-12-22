@@ -68,6 +68,7 @@ export const Portfolio: React.FC = () => {
       image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&h=400&fit=crop",
       title: "Youth Empowerment",
       description: "Launched grassroots campaigns to active youth voices in local governance and community development. Focused on creating platforms for civil participation, skill-building in digital literacy, and fostering a sense of ownership in community outcomes.",
+      videoUrl: "/youth-empowerment.mp4",
       details: [
         "Mobilized 1000+ youth volunteers for community clean-up and rehabilitation projects.",
         "Secured grant funding for 5 youth-led startups focused on social impact.",

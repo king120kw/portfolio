@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
         </nav>
 
         <p className="text-[11px] opacity-50">
-          © 2024 Ismail Abdirahman. All rights reserved.
+          © 2025 Ismail Abdirahman. All rights reserved.
         </p>
       </div>
     </footer>

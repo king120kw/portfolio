@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { X } from 'lucide-react';
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -50,22 +50,35 @@ export const Navbar = () => {
       <div className="md:hidden fixed top-6 right-6" style={{ zIndex: 10000 }}>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="flex items-center justify-center w-12 h-12 bg-[#d4a574] text-[#1a2332] rounded-full shadow-[0_0_20px_rgba(212,165,116,0.8)] active:scale-95 transition-all duration-300 border-2 border-white/20"
+          className="flex flex-col items-center justify-center w-12 h-12 bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] active:scale-95 transition-all duration-300 border border-black/5"
           aria-label="Toggle Menu"
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMobileMenuOpen ? (
+            <X size={24} className="text-[#3b82f6]" />
+          ) : (
+            <div className="flex flex-col gap-1 items-center justify-center">
+              <div className="w-6 h-[2px] bg-[#3b82f6] rounded-full"></div>
+              <div className="w-6 h-[2px] bg-[#3b82f6] rounded-full"></div>
+              <div className="w-6 h-[2px] bg-[#3b82f6] rounded-full"></div>
+            </div>
+          )}
         </button>
       </div>
 
       {/* Mobile Nav Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-[#1a2332]/98 z-[9999] flex flex-col items-center justify-center space-y-8 md:hidden backdrop-blur-sm animate-fade-in">
-          {navLinks.map((link) => (
+        <div className="fixed inset-0 bg-[#1a2332]/98 z-[9999] flex flex-col items-center justify-center space-y-8 md:hidden backdrop-blur-md animate-fade-in">
+          {navLinks.map((link, index) => (
             <a
               key={link.name}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-[#e8eef3] text-2xl font-['Roboto_Condensed'] uppercase tracking-[0.2em] hover:text-[#d4a574] transition-colors duration-300 transform hover:scale-110"
+              className="text-[#e8eef3] text-2xl font-['Roboto_Condensed'] uppercase tracking-[0.2em] hover:text-[#d4a574] transition-all duration-300 transform hover:scale-110"
+              style={{
+                animationDelay: `${index * 100}ms`,
+                opacity: 0,
+                animation: 'fadeInUp 0.5s ease forwards'
+              }}
             >
               {link.name}
             </a>
